@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
   
       // 🚨 Get input values
-      const studentNameInput = document.getElementById('studentName');
-      const personalMessageInput = document.querySelector('#personalMessage');
-      const courseNameInput = document.querySelector('#courseName'); 
+      const studentNameInput = document.getElementById('studentName').value;
+      const personalMessageInput = document.querySelector('#personalMessage').value;
+      const courseNameInput = document.querySelector('#courseName').value; 
       console.log(studentName);
       console.log(personalMessageInput);
       console.log(courseNameInput);
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   
       // 🚨 Generate certificate content dynamically
-      certificateContent. = `
+      certificateContent.textContent = `
       <h3>${studentName}</h3>
     `;
     
@@ -42,8 +42,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     //  🚨 Close the modal when the close button is clicked
-    closeModal.('', function () {
+    closeModal.modal('#modal', function () {
       
     });
   });
   
+
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+
+
+
+  $(document).ready(function(){
+    $('#myModal').modal('show');
+
+    $('#myBtn').on('click', function(){
+      $('#myModal').modal('show');
+    });
+    
+  });
