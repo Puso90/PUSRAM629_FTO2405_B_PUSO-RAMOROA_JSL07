@@ -4,9 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const certificateContent = document.getElementById('certificateContent');
     const closeModal = document.querySelector('.close');
   
-    // Hide the modal initially 
-    modal.style.display = 'none';
-  
     cardForm.addEventListener('submit', function (e) {
       e.preventDefault();
   
@@ -14,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const studentNameInput = document.getElementById('studentName').value;
       const personalMessageInput = document.querySelector('#personalMessage').value;
       const courseNameInput = document.querySelector('#courseName').value; 
-      console.log(studentName);
+      console.log(studentNameInput);
       console.log(personalMessageInput);
       console.log(courseNameInput);
   
@@ -22,15 +19,33 @@ document.addEventListener('DOMContentLoaded', function () {
       const personalMessage = personalMessageInput.value;
       const courseName = courseNameInput ? courseNameInput.value : "a course"; // Fallback to "a course" if no input
   
-      if (studentName.trim() === '' || personalMessage.trim() === '') {
+      if (studentName === '' || personalMessage === '') {
         alert('Please fill in all fields');
         return;
       }
   
       // 🚨 Generate certificate content dynamically
-      certificateContent.textContent = `
-      <h3>${studentName}</h3>
-    `;
+      certificateContent.textContent = ` 
+      Certificate of Achievement
+      
+
+        This is to certify that
+
+
+        ${studentNameInput}
+
+        has almost completed the
+
+
+        ${courseNameInput} Course
+
+        with legendary perseverance and world-class bad-assery for never giving up🏆
+
+
+        ${personalMessageInput}
+      
+      `;
+      
     
       //  Display the modal
       modal.style.display = 'block';
@@ -42,33 +57,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     //  🚨 Close the modal when the close button is clicked
-    closeModal.modal('#modal', function () {
-      
+    closeModal.addEventListener('click', function () {
+        modal.style.display = 'none'; // Moved This from the top to here
     });
   });
   
 
 
-// Get the modal
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
+  
+//___________________________________________________________________________________________
+// COMMENTS & NOTES
+/*
+
+    1.  Struggled a bit with the 404 message - never encountered before
+    2.  Had forgot that last function was an event listener till I opend previous projects
+    3.  Why am I not seeing the createElements and appends 
+    4.  The undefined was playing tricks, because I put studentName without the Input at end
+
+// REFERENCE 
+
+    1.  None but previous projects and previous scrimpa
 
 
 
-
-
-  $(document).ready(function(){
-    $('#myModal').modal('show');
-
-    $('#myBtn').on('click', function(){
-      $('#myModal').modal('show');
-    });
-    
-  });
+*/
+//____________________________________________________________________________________________
