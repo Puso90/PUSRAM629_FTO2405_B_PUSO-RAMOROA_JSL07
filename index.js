@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // 🚨 Get input values
       const studentNameInput = document.getElementById('studentName').value;
       const personalMessageInput = document.querySelector('#personalMessage').value;
-      const courseNameInput = document.querySelector('#courseName').value; 
+      const courseNameInput = document.querySelector('#courseName'); 
       console.log(studentNameInput);
       console.log(personalMessageInput);
       console.log(courseNameInput);
@@ -31,32 +31,18 @@ document.addEventListener('DOMContentLoaded', function () {
       certificateTitle.textContent = `Certificate of Achievement`;
       certificateContent.appendChild(certificateTitle);
       // paragraph one
-      const paragraphOne = document.createElement('p');
-      paragraphOne.textContent = `This is to certify that`;
-      certificateContent.appendChild(paragraphOne);
-      // student entry
-      const nameOfStudent = document.createElement('h4');
-      nameOfStudent.textContent = studentName;
-      certificateContent.appendChild(nameOfStudent);
-      // paragraph two
-      const paragraphTwo = document.createElement('p');
-      paragraphTwo.textContent = `has almost completed the`;
-      certificateContent.appendChild(paragraphTwo);
-      // course entry
-      const courseEntry = document.createElement('h4');
-      courseEntry.textContent = courseName;
-      certificateContent.appendChild(courseEntry);
-      // paragraph three
-      const paragraphThree = document.createElement('p');
-      paragraphThree.textContent = `with legendary perseverance and world-class bad-assery for never giving up🏆`;
-      certificateContent.appendChild(paragraphThree);
-      // personal message 
-      const message = document.createElement('p');
-      message.textContent = personalMessage;
-      certificateContent.appendChild(message);
+      
 
-
-
+      certificateContent.innerHTML = `
+    <h2>Certificate of Achievement</h2>
+    <p>This is to certify that</p>
+    <h3>${studentName}</h3>
+    <p>has almost completed the</p>
+    <h4>${courseName} Course</h4>
+    <p>with legendary perseverance and world-class bad-assery for never giving up🏆</p>
+    <img src="https://codespace-assets.global.ssl.fastly.net/wp/assets/website/codespace-primary-logo-light.svg" alt="Seal" style="margin-top: 20px;">
+    <p>${personalMessage}</p>
+    `;
     
       
     
@@ -92,9 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     1.  None but previous projects and previous scrimpa
 
-
-
-
+//____________________________________________________________________________________________    
 
     Certificate of Achievement
       
@@ -113,6 +97,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         ${personalMessageInput}
+
+        __________________________________
+        REMOVED THIS CHUNKY STUFF!
+        1.  Scrimba had a better way with 
+            template literals
+        __________________________________
+
+        const certificateTitle = document.createElement('h2');
+      certificateTitle.textContent = `Certificate of Achievement`;
+      certificateContent.appendChild(certificateTitle);
+      // paragraph one
+      const paragraphOne = document.createElement('p');
+      paragraphOne.textContent = `This is to certify that`;
+      certificateContent.appendChild(paragraphOne);
+      // student entry
+      const nameOfStudent = document.createElement('h4');
+      nameOfStudent.textContent = studentName;
+      certificateContent.appendChild(nameOfStudent);
+      // paragraph two
+      const paragraphTwo = document.createElement('p');
+      paragraphTwo.textContent = `has almost completed the`;
+      certificateContent.appendChild(paragraphTwo);
+      // course entry
+      const courseEntry = document.createElement('h4');
+      courseEntry.textContent = courseName;
+      certificateContent.appendChild(courseEntry);
+      // paragraph three
+      const paragraphThree = document.createElement('p');
+      paragraphThree.textContent = `with legendary perseverance and world-class bad-assery for never giving up🏆`;
+      certificateContent.appendChild(paragraphThree);
+      // image entry 
+      const imageEntry = document.createElement('img');
+      imageEntry.textContent = img src="https://codespace-assets.global.ssl.fastly.net/wp/assets/website/codespace-primary-logo-light.svg" alt="Seal" style="margin-top: 20px;">;
+      certificateContent.appendChild(imageEntry);
+      // personal message 
+      const message = document.createElement('p');
+      message.textContent = personalMessage;
+      certificateContent.appendChild(message);
+
 
 */
 //____________________________________________________________________________________________
