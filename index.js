@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log(studentNameInput);
       console.log(personalMessageInput);
       console.log(courseNameInput);
+      
   
-      const studentName = studentNameInput.value;
-      const personalMessage = personalMessageInput.value;
+      const studentName = studentNameInput;
+      const personalMessage = personalMessageInput;
       const courseName = courseNameInput ? courseNameInput.value : "a course"; // Fallback to "a course" if no input
   
       if (studentName === '' || personalMessage === '') {
@@ -25,26 +26,38 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   
       // 🚨 Generate certificate content dynamically
-      certificateContent.textContent = ` 
-      Certificate of Achievement
-      
+      // Certificate Heading
+      const certificateTitle = document.createElement('h2');
+      certificateTitle.textContent = `Certificate of Achievement`;
+      certificateContent.appendChild(certificateTitle);
+      // paragraph one
+      const paragraphOne = document.createElement('p');
+      paragraphOne.textContent = `This is to certify that`;
+      certificateContent.appendChild(paragraphOne);
+      // student entry
+      const nameOfStudent = document.createElement('h4');
+      nameOfStudent.textContent = studentName;
+      certificateContent.appendChild(nameOfStudent);
+      // paragraph two
+      const paragraphTwo = document.createElement('p');
+      paragraphTwo.textContent = `has almost completed the`;
+      certificateContent.appendChild(paragraphTwo);
+      // course entry
+      const courseEntry = document.createElement('h4');
+      courseEntry.textContent = courseName;
+      certificateContent.appendChild(courseEntry);
+      // paragraph three
+      const paragraphThree = document.createElement('p');
+      paragraphThree.textContent = `with legendary perseverance and world-class bad-assery for never giving up🏆`;
+      certificateContent.appendChild(paragraphThree);
+      // personal message 
+      const message = document.createElement('p');
+      message.textContent = personalMessage;
+      certificateContent.appendChild(message);
 
-        This is to certify that
 
 
-        ${studentNameInput}
-
-        has almost completed the
-
-
-        ${courseNameInput} Course
-
-        with legendary perseverance and world-class bad-assery for never giving up🏆
-
-
-        ${personalMessageInput}
-      
-      `;
+    
       
     
       //  Display the modal
@@ -65,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  
+
 //___________________________________________________________________________________________
 // COMMENTS & NOTES
 /*
@@ -80,6 +93,26 @@ document.addEventListener('DOMContentLoaded', function () {
     1.  None but previous projects and previous scrimpa
 
 
+
+
+
+    Certificate of Achievement
+      
+
+        This is to certify that
+
+
+        ${studentNameInput}
+
+        has almost completed the
+
+
+        ${courseNameInput} Course
+
+        with legendary perseverance and world-class bad-assery for never giving up🏆
+
+
+        ${personalMessageInput}
 
 */
 //____________________________________________________________________________________________
